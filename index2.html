@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: rgb(231, 228, 26);
+            text-align: center;
+            border: 2px solid black;
+            margin: 0;
+            background: yellow;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>The Document Object</h1>
+    <h2>The addEventListener() Method</h2>
+
+    <p>Click anywhere in the document to display "Hello World!".</p>
+
+    <button style="width:100px; height:100px; background-color: red;">CLICK</button>
+
+    <p id='demo'></p>
+
+    <script>
+        document.querySelector("button").addEventListener("click", function () {
+
+            document.body.appendChild(document.createElement('div')).textContent = "DIV";
+
+            //document.getElementById("demo").innerHTML = "Hello World";//
+        });
+    </script>
+
+</body>
+
+</html>
