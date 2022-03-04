@@ -4,14 +4,22 @@
 <head>
     <style>
         div {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             background: rgb(231, 228, 26);
             text-align: center;
             border: 2px solid black;
             margin: 0;
             background: yellow;
+            float: right;
 
+        }
+
+        .circle {
+            background-color: white;
+            border-radius: 50%;
+            color: black;
+            border: 2px solid black;
         }
     </style>
 
@@ -26,17 +34,26 @@
 
     <button style="width:100px; height:100px; background-color: red;">CLICK</button>
 
-    <p id='demo'></p>
 
     <script>
-        document.querySelector("button").addEventListener("click", function () {
 
-            document.body.appendChild(document.createElement('div')).textContent = "DIV";
+        let number = 1;
+        let activeNumber = 1;
 
-            //document.getElementById("demo").innerHTML = "Hello World";//
-        });
+        const x = function () {
+            const div = document.createElement("div");
+            document.body.appendChild(div);
+            div.textContent = number;
+            number++;
+
+            if (activeNumber == 5) { div.classList.add("circle"); activeNumber = 0 }
+            activeNumber++
+        };
+
+
+        const button = document.querySelector("button");
+        button.addEventListener("click", x);
     </script>
-
 </body>
 
 </html>
